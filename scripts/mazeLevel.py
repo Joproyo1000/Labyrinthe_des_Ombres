@@ -636,8 +636,9 @@ class Maze:
 
             else:
                 self.settings.CURRENTLEVEL += 1
-                self.visible_sprites.notification(100, 100, 'YOU HAVE ENTERED LEVEL' + self.settings.CURRENTLEVEL, 'topleft', 400)
-                self.reset()
+                self.visible_sprites.notification(self.settings.WIDTH / 1.1, self.settings.HEIGHT / 1.1,
+                                                  self.settings.TEXTS[self.settings.LANGUAGE]['YOU HAVE ENTERED LEVEL'] + str(self.settings.CURRENTLEVEL), 'bottomright', 400)
+                self.reset(player=self.player)
 
         # if player hits enemy, he dies and the level restarts, unless he has extra lives
         if self.check_death():
@@ -650,14 +651,11 @@ class Maze:
 
         return self.screen
 
-    def reset(self):
+    def reset(self, player=None):
         """
         Resets maze with same settings
         """
-        if self.status != 'running':
-            self.__init__(self.settings, player=self.player)
-        else:
-            self.__init__(self.settings)
+        self.__init__(self.settings, player=player)
 
     def run(self, deltaTime: float, getInput=True):
         """
