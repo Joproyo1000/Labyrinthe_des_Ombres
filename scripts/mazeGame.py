@@ -29,9 +29,9 @@ class MazeGame:
         else:
             self.screen = pygame.display.set_mode(self.settings.RESOLUTION)
 
-        self.menuBackground = pygame.image.load('graphics/menu_background.png').convert()
+        self.menuBackground = pygame.image.load('../graphics/menu_background.png').convert()
         self.menuBackground = pygame.transform.scale(self.menuBackground, (self.screen.get_size()))
-        self.endingBackground = pygame.image.load('graphics/ending_background.png').convert()
+        self.endingBackground = pygame.image.load('../graphics/ending_background.png').convert()
         self.endingBackground = pygame.transform.scale(self.endingBackground, (self.screen.get_size()))
         self.background = self.menuBackground
 
@@ -61,7 +61,7 @@ class MazeGame:
 
         self.drawScreen()
 
-        titleText = pygame.font.Font('font/Pixeltype.ttf', self.settings.HEIGHT // 8).render(self.settings.TEXTS[self.settings.LANGUAGE]['The Maze Of Shadows'].upper(), True, self.settings.TEXTCOLOR)
+        titleText = pygame.font.Font('../font/Pixeltype.ttf', self.settings.HEIGHT // 8).render(self.settings.TEXTS[self.settings.LANGUAGE]['The Maze Of Shadows'].upper(), True, self.settings.TEXTCOLOR)
         titleTextRect = titleText.get_rect(center=(self.settings.WIDTH/2, self.settings.HEIGHT/3.5))
         self.screen.blit(titleText, titleTextRect)
 
@@ -128,11 +128,11 @@ class MazeGame:
                                (30, 120), self.settings.FONT, self.settings.TEXTCOLOR, self.settings.SLIDEREXTCOLOR, self.settings.SLIDERINTCOLOR, self.settings.HOVERINGCOLOR, self.settings.TEXTCOLOR,
                                sliderSize, 60),
 
-                        Button(pygame.transform.scale(pygame.image.load('graphics/flags/FR.png').convert_alpha(), (100, 100)), (self.settings.WIDTH // 6, self.settings.HEIGHT // 1.3),
+                        Button(pygame.transform.scale(pygame.image.load('../graphics/flags/FR.png').convert_alpha(), (100, 100)), (self.settings.WIDTH // 6, self.settings.HEIGHT // 1.3),
                                '', self.settings.FONT, self.settings.TEXTCOLOR, self.settings.HOVERINGCOLOR),
-                        Button(pygame.transform.scale(pygame.image.load('graphics/flags/EN.png').convert_alpha(), (100, 100)), (self.settings.WIDTH // 4.42, self.settings.HEIGHT // 1.3),
+                        Button(pygame.transform.scale(pygame.image.load('../graphics/flags/EN.png').convert_alpha(), (100, 100)), (self.settings.WIDTH // 4.42, self.settings.HEIGHT // 1.3),
                                '', self.settings.FONT, self.settings.TEXTCOLOR, self.settings.HOVERINGCOLOR),
-                        Button(pygame.transform.scale(pygame.image.load('graphics/flags/DE.png').convert_alpha(), (100, 100)), (self.settings.WIDTH // 3.5, self.settings.HEIGHT // 1.3),
+                        Button(pygame.transform.scale(pygame.image.load('../graphics/flags/DE.png').convert_alpha(), (100, 100)), (self.settings.WIDTH // 3.5, self.settings.HEIGHT // 1.3),
                                '', self.settings.FONT, self.settings.TEXTCOLOR, self.settings.HOVERINGCOLOR),
 
                         Button(None, (self.settings.WIDTH // 1.3, self.settings.HEIGHT // 1.25), self.settings.TEXTS[self.settings.LANGUAGE]['CONTROLS'],
@@ -271,8 +271,8 @@ class MazeGame:
         currentPage = 1
         pages = [
             # page 1
-            [pygame.transform.scale_by(pygame.image.load('graphics/mouseHelp.png').convert_alpha(), 5),
-             pygame.transform.scale_by(pygame.image.load('graphics/objectHelp.png').convert_alpha(), 5),
+            [pygame.transform.scale_by(pygame.image.load('../graphics/mouseHelp.png').convert_alpha(), 5),
+             pygame.transform.scale_by(pygame.image.load('../graphics/objectHelp.png').convert_alpha(), 5),
              self.settings.FONT.render(self.settings.TEXTS[self.settings.LANGUAGE]['CONTROLS'], True, 'gray'),
 
              self.settings.SMALLFONT.render(self.settings.TEXTS[self.settings.LANGUAGE]['ITEM DISPLAY DESCRIPTION'], True, 'gray'),
@@ -282,10 +282,10 @@ class MazeGame:
              self.settings.SMALLFONT.render(self.settings.TEXTS[self.settings.LANGUAGE]['ITEM USE DESCRIPTION 2'], True, 'gray')
              ],
             # page 2
-            [pygame.transform.scale_by(pygame.image.load('graphics/enemies/wolf/right_idle/blind_wolf_right_idle1.png').convert_alpha(), 2),
-             pygame.transform.scale_by(pygame.image.load('graphics/enemies/spider/right_idle/spider_mouse_right_idle1.png').convert_alpha(), 3),
-             pygame.transform.scale_by(pygame.image.load('graphics/enemies/slime/right_idle/slime_right_idle1.png').convert_alpha(), 3),
-             pygame.transform.scale_by(pygame.image.load('graphics/enemies/rabbit/right_idle/cute_bunny_right_idle1.png').convert_alpha(), 3),
+            [pygame.transform.scale_by(pygame.image.load('../graphics/enemies/wolf/right_idle/blind_wolf_right_idle1.png').convert_alpha(), 2),
+             pygame.transform.scale_by(pygame.image.load('../graphics/enemies/spider/right_idle/spider_mouse_right_idle1.png').convert_alpha(), 3),
+             pygame.transform.scale_by(pygame.image.load('../graphics/enemies/slime/right_idle/slime_right_idle1.png').convert_alpha(), 3),
+             pygame.transform.scale_by(pygame.image.load('../graphics/enemies/rabbit/right_idle/cute_bunny_right_idle1.png').convert_alpha(), 3),
 
              self.settings.FONT.render(self.settings.TEXTS[self.settings.LANGUAGE]['ENEMIES'], True, 'gray'),
              self.settings.SMALLFONT.render(self.settings.TEXTS[self.settings.LANGUAGE]['WOLF DESCRIPTION'], True, 'gray'),
@@ -296,9 +296,9 @@ class MazeGame:
              self.settings.SMALLFONT.render(self.settings.TEXTS[self.settings.LANGUAGE]['SLIME DESCRIPTION 2'], True, 'gray'),
              self.settings.SMALLFONT.render(self.settings.TEXTS[self.settings.LANGUAGE]['RABBIT DESCRIPTION'], True, 'gray')],
             # page 3
-            [pygame.transform.scale_by(pygame.image.load('graphics/special/objects/map.png').convert_alpha(), 3),
-             pygame.transform.scale_by(pygame.image.load('graphics/special/objects/freeze.png').convert_alpha(), 3),
-             pygame.transform.scale_by(pygame.image.load('graphics/special/objects/heal.png').convert_alpha(), 3),
+            [pygame.transform.scale_by(pygame.image.load('../graphics/special/objects/map.png').convert_alpha(), 3),
+             pygame.transform.scale_by(pygame.image.load('../graphics/special/objects/freeze.png').convert_alpha(), 3),
+             pygame.transform.scale_by(pygame.image.load('../graphics/special/objects/heal.png').convert_alpha(), 3),
 
              self.settings.FONT.render(self.settings.TEXTS[self.settings.LANGUAGE]['ITEMS'], True, 'gray'),
              self.settings.SMALLFONT.render(self.settings.TEXTS[self.settings.LANGUAGE]['MAP DESCRIPTION'], True, 'gray'),
@@ -503,7 +503,7 @@ class MazeGame:
         """
         currentTime = time.time()
 
-        mapSurf = pygame.transform.scale(pygame.image.load('graphics/special/objects/bigMap.png').convert_alpha(),
+        mapSurf = pygame.transform.scale(pygame.image.load('../graphics/special/objects/bigMap.png').convert_alpha(),
                                               (self.screen.get_size()))
         self.maze.run(0, getInput=False)
         mapImg = self.maze.bake_map()

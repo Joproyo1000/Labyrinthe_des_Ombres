@@ -64,7 +64,7 @@ class Enemy(pygame.sprite.Sprite):
         Loads the corresponding animation frames onto the ennemy
         """
         if self.type == 'wolf':
-            character_path = 'graphics/enemies/wolf/'
+            character_path = '../graphics/enemies/wolf/'
             self.animations = {'left': [], 'right': [],
                                'left_idle': [], 'right_idle': []}
 
@@ -73,7 +73,7 @@ class Enemy(pygame.sprite.Sprite):
                 self.animations[animation] = import_folder(full_path, 1.6)
 
         if self.type == 'spider':
-            character_path = 'graphics/enemies/spider/'
+            character_path = '../graphics/enemies/spider/'
             self.animations = {'left': [], 'right': [],
                                'left_idle': [], 'right_idle': []}
 
@@ -82,7 +82,7 @@ class Enemy(pygame.sprite.Sprite):
                 self.animations[animation] = import_folder(full_path, 1.6)
 
         if self.type == 'slime':
-            character_path = 'graphics/enemies/slime/'
+            character_path = '../graphics/enemies/slime/'
             self.animations = {'up': [], 'left': [], 'down': [], 'right': [],
                                'up_idle': [], 'left_idle': [], 'down_idle': [], 'right_idle': []}
 
@@ -91,7 +91,7 @@ class Enemy(pygame.sprite.Sprite):
                 self.animations[animation] = import_folder(full_path, 1.6)
 
         if self.type == 'rabbit':
-            character_path = 'graphics/enemies/rabbit/'
+            character_path = '../graphics/enemies/rabbit/'
             self.animations = {'left': [], 'right': [],
                                'left_idle': [], 'right_idle': [],
                                'left_transform': [], 'right_transform': []}

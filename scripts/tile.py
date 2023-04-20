@@ -12,12 +12,12 @@ class Tile(pygame.sprite.Sprite):
         """
         self.settings = settings
 
-        self.image = pygame.image.load('graphics/maze/Bush.png').convert_alpha()
+        self.image = pygame.image.load('../graphics/maze/Bush.png').convert_alpha()
         scale = self.settings.TILESIZE/27
         self.image = pygame.transform.scale(self.image, (27 * scale, 37 * scale))
-        self.path = pygame.image.load('graphics/maze/Grass.png').convert_alpha()
+        self.path = pygame.image.load('../graphics/maze/Grass.png').convert_alpha()
         self.path = pygame.transform.scale(self.path, (27 * scale, 37 * scale))
-        self.goal = pygame.image.load('graphics/maze/Stairs.png').convert_alpha()
+        self.goal = pygame.image.load('../graphics/maze/Stairs.png').convert_alpha()
         self.goal = pygame.transform.scale(self.goal, (27 * scale, 37 * scale))
 
         self.rect = pygame.rect.Rect(pos[0], pos[1], min(self.image.get_width(), self.image.get_height()), min(self.image.get_width(), self.image.get_height()))

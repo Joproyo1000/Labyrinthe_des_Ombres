@@ -44,10 +44,10 @@ class Settings:
         self.RABBITPROPORTION = 0.2
 
         # initialize font
-        self.FONT = pygame.font.Font('font/Pixeltype.ttf', self.HEIGHT // 10)
-        self.SMALLFONT = pygame.font.Font('font/Pixeltype.ttf', self.HEIGHT // 17)
-        self.BIGCREEPYFONT = pygame.font.Font('font/HelpMe.ttf', self.HEIGHT // 10)
-        self.SMALLCREEPYFONT = pygame.font.Font('font/HelpMe.ttf', self.HEIGHT // 13)
+        self.FONT = pygame.font.Font('../font/Pixeltype.ttf', self.HEIGHT // 10)
+        self.SMALLFONT = pygame.font.Font('../font/Pixeltype.ttf', self.HEIGHT // 17)
+        self.BIGCREEPYFONT = pygame.font.Font('../font/HelpMe.ttf', self.HEIGHT // 10)
+        self.SMALLCREEPYFONT = pygame.font.Font('../font/HelpMe.ttf', self.HEIGHT // 13)
 
         # controls
         self.K_UP = pygame.K_z
@@ -89,9 +89,9 @@ class Settings:
 
         # initialize music and sound effects
         self.MUSICCHANNEL = pygame.mixer.Channel(0)
-        self.MUSIC = pygame.mixer.Sound('sound/Horror.mp3')
+        self.MUSIC = pygame.mixer.Sound('../sound/Horror.mp3')
         self.SOUNDEFFECTCHANNEL = pygame.mixer.Channel(1)
-        self.FOOTSTEPSOUNDEFFECTS = list(pygame.mixer.Sound(f'sound/effects/walking/footstep{i}.mp3') for i in range(6))
+        self.FOOTSTEPSOUNDEFFECTS = list(pygame.mixer.Sound(f'../sound/effects/walking/footstep{i}.mp3') for i in range(6))
 
         self.VOLUME = 1.00  # default volume
 

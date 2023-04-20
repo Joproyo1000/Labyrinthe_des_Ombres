@@ -4,7 +4,6 @@ import player
 import settings
 import spatial_hashmap
 
-from math import floor
 from support import import_folder
 from random import randint
 
@@ -40,7 +39,7 @@ class Torch(pygame.sprite.Sprite):
         """
         Loads the corresponding animation frames onto the object
         """
-        object_path = 'graphics/special/torch/'
+        object_path = '../graphics/special/torch/'
         self.animations = {'right': []}
 
         for animation in self.animations:
@@ -118,7 +117,7 @@ class Chest(pygame.sprite.Sprite):
         """
         Loads the corresponding animation frames onto the object
         """
-        character_path = 'graphics/special/chest/'
+        character_path = '../graphics/special/chest/'
         self.animations = {'closed': [], 'opened': []}
 
         for animation in self.animations:
@@ -164,7 +163,7 @@ class CobWeb(pygame.sprite.Sprite):
         :param groups: groups in which the cobweb are
         :param obstacle_sprites: copy of the obstacle sprites
         """
-        self.image = pygame.image.load('graphics/special/cobweb.png').convert_alpha()
+        self.image = pygame.image.load('../graphics/special/cobweb.png').convert_alpha()
         self.image = pygame.transform.scale_by(self.image, 3)
         self.rect = self.image.get_rect(topleft=pos)
         self.hitbox = self.rect.copy()
@@ -199,7 +198,7 @@ class Freeze(Useable):
         :param pos: position at which it was found
         """
         super().__init__()
-        self.image = pygame.image.load('graphics/special/objects/freeze.png').convert_alpha()
+        self.image = pygame.image.load('../graphics/special/objects/freeze.png').convert_alpha()
         self.image = pygame.transform.scale_by(self.image, 4)
         self.rect = self.image.get_rect(center=pos)
         self.text = settings.TEXTS[settings.LANGUAGE]["A FREEZE ITEM"]
@@ -212,7 +211,7 @@ class Heal(Useable):
         :param pos: position at which it was found
         """
         super().__init__()
-        self.image = pygame.image.load('graphics/special/objects/heal.png').convert_alpha()
+        self.image = pygame.image.load('../graphics/special/objects/heal.png').convert_alpha()
         self.image = pygame.transform.scale_by(self.image, 4)
         self.rect = self.image.get_rect(center=pos)
         self.text = settings.TEXTS[settings.LANGUAGE]["AN EXTRA LIFE"]

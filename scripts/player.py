@@ -64,7 +64,7 @@ class Player(pygame.sprite.Sprite):
         Loads the corresponding animation frames onto the player
         """
         if type == 'boy':
-            character_path = 'graphics/player/boy/'
+            character_path = '../graphics/player/boy/'
             # create a dictionary with every state of the player and its corresponding animations
             self.animations = {'up': [], 'left': [], 'down': [], 'right': [],
                                'up_idle': [], 'left_idle': [], 'down_idle': [], 'right_idle': []}
@@ -75,7 +75,7 @@ class Player(pygame.sprite.Sprite):
                 self.animations[animation] = import_folder(full_path, 1.6)
 
         if type == 'girl':
-            character_path = 'graphics/player/girl/'
+            character_path = '../graphics/player/girl/'
             # create a dictionary with every state of the player and its corresponding animations
 
             self.animations = {'up': [], 'left': [], 'down': [], 'right': [],
@@ -86,7 +86,7 @@ class Player(pygame.sprite.Sprite):
                 self.animations[animation] = import_folder(full_path, 1.6)
 
         # set the first image of the player
-        self.image = pygame.image.load('graphics/player/boy/down_idle/boy_sprite_front_idle1.png')
+        self.image = pygame.image.load('../graphics/player/boy/down_idle/boy_sprite_front_idle1.png')
 
     def input(self):
         """
