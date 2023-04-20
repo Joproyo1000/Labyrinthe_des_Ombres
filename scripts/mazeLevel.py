@@ -78,12 +78,11 @@ class Maze:
         self.init_rooms()
 
         # initialize the player and put it on the first tile
-        if player is None:
-            self.player = Player(self.start_tile.rect.center, self.settings.TYPE, self.settings, [self.visible_sprites], self.obstacle_sprites)
-        else:
-            self.player = player
-            self.player.rect.center = self.start_tile.rect.center
-            self.player.status = 'down_idle'
+        self.player = Player(self.start_tile.rect.center, self.settings.TYPE, self.settings, [self.visible_sprites], self.obstacle_sprites)
+
+        if player is not None:
+            self.player.inventory = player.inventory.copy()
+            self.player.lives = player.lives
 
         self.update_tile_colors()
         self.obstacle_sprites.generate_hashmap()
